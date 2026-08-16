@@ -72,6 +72,10 @@ services:
       RECIPIENT_EMAIL: "${RECIPIENT_EMAIL}"
       RATE_LIMIT_MAX: "${RATE_LIMIT_MAX:-5}"
       RATE_LIMIT_WINDOW: "${RATE_LIMIT_WINDOW:-3600}"
+      AUTO_REPLY_MAX: "${AUTO_REPLY_MAX:-2}"
+      AUTO_REPLY_WINDOW: "${AUTO_REPLY_WINDOW:-86400}"
+      LOGIN_MAX: "${LOGIN_MAX:-8}"
+      LOGIN_WINDOW: "${LOGIN_WINDOW:-900}"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.dafalabs-api.rule=Host(`api.dafalabs.com`)"
