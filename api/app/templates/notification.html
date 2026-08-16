@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:1.6px;
+            text-transform:uppercase; color:#e0a33c; padding-bottom:12px;">
+  Yeni mesaj
+</div>
+
+<h1 style="margin:0 0 28px; font-family:Helvetica,Arial,sans-serif; font-size:24px;
+           line-height:30px; font-weight:700; letter-spacing:-0.5px; color:#f4f5f6;">
+  {{ subject_line }}
+</h1>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+       style="margin:0 0 28px; border-top:1px solid #23262a;">
+  {% for label, value in rows %}
+  <tr>
+    <td style="padding:12px 0; border-bottom:1px solid #23262a; width:120px;
+               font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:1.4px;
+               text-transform:uppercase; color:#7d838a; vertical-align:top;">{{ label }}</td>
+    <td style="padding:12px 0; border-bottom:1px solid #23262a;
+               font-family:Helvetica,Arial,sans-serif; font-size:14px; color:#f4f5f6;">{{ value }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div style="font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:1.6px;
+            text-transform:uppercase; color:#7d838a; padding-bottom:10px;">Mesaj</div>
+
+<div style="white-space:pre-wrap; border-left:2px solid #e0a33c; padding:4px 0 4px 18px;
+            font-family:Helvetica,Arial,sans-serif; font-size:15px; line-height:24px;
+            color:#c3c7cc;">{{ message }}</div>
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;">
+  <tr>
+    <td bgcolor="#e0a33c" style="background-color:#e0a33c;">
+      <a href="{{ reply_url }}"
+         style="display:inline-block; padding:12px 24px; font-family:Helvetica,Arial,sans-serif;
+                font-size:14px; font-weight:700; color:#08090a; text-decoration:none;">
+        Yanıtla
+      </a>
+    </td>
+  </tr>
+</table>
+{% endblock %}
+
+{% block footer %}
+Panelden yönet: <a href="{{ panel_url }}" style="color:#7d838a; text-decoration:underline;">{{ panel_url }}</a>
+{% endblock %}

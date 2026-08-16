@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="margin:0 0 20px; font-family:Helvetica,Arial,sans-serif; font-size:26px;
+           line-height:32px; font-weight:700; letter-spacing:-0.5px; color:#f4f5f6;">
+  {{ t.heading }}
+</h1>
+
+<p style="margin:0 0 16px; font-family:Helvetica,Arial,sans-serif; font-size:15px;
+          line-height:24px; color:#c3c7cc;">
+  {{ t.greeting }}
+</p>
+
+<p style="margin:0 0 28px; font-family:Helvetica,Arial,sans-serif; font-size:15px;
+          line-height:24px; color:#c3c7cc;">
+  {{ t.body }}
+</p>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+       style="margin:0 0 28px;">
+  <tr>
+    <td bgcolor="#08090a" style="background-color:#08090a; border:1px solid #3d3122;
+                                 padding:20px 24px;">
+      <div style="font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:1.6px;
+                  text-transform:uppercase; color:#7d838a; padding-bottom:8px;">
+        {{ t.code_label }}
+      </div>
+      <div style="font-family:'SF Mono',Menlo,Consolas,monospace; font-size:22px;
+                  letter-spacing:1px; color:#e0a33c;">{{ code }}</div>
+    </td>
+  </tr>
+</table>
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="#e0a33c" style="background-color:#e0a33c;">
+      <a href="{{ tracking_url }}"
+         style="display:inline-block; padding:14px 28px; font-family:Helvetica,Arial,sans-serif;
+                font-size:14px; font-weight:700; color:#08090a; text-decoration:none;">
+        {{ t.cta }}
+      </a>
+    </td>
+  </tr>
+</table>
+{% endblock %}
+
+{% block footer %}
+{{ t.footer }}<br>
+<a href="{{ site_url }}" style="color:#7d838a; text-decoration:underline;">dafalabs.com</a>
+{% endblock %}
