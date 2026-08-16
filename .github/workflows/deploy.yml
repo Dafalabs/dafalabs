@@ -77,9 +77,10 @@ jobs:
         env:
           HOST: ${{ secrets.DEPLOY_HOST }}
           USER: ${{ secrets.DEPLOY_USER }}
+          PORT: ${{ secrets.DEPLOY_PORT }}
           DIR: ${{ secrets.DEPLOY_PATH }}
         run: |
-          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes "$USER@$HOST" \
+          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -p "$PORT" "$USER@$HOST" \
             DIR="$DIR" 'bash -euo pipefail -s' <<'REMOTE'
           cd "$DIR"
           git fetch --prune origin
@@ -92,9 +93,10 @@ jobs:
         env:
           HOST: ${{ secrets.DEPLOY_HOST }}
           USER: ${{ secrets.DEPLOY_USER }}
+          PORT: ${{ secrets.DEPLOY_PORT }}
           DIR: ${{ secrets.DEPLOY_PATH }}
         run: |
-          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes "$USER@$HOST" \
+          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -p "$PORT" "$USER@$HOST" \
             DIR="$DIR" 'bash -euo pipefail -s' <<'REMOTE'
           cd "$DIR"
           health() {
