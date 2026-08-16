@@ -1,0 +1,12 @@
+.env
+.idea/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.claude/
+AGENTS.md
+CLAUDE.md
+media/*
+!media/.gitkeep

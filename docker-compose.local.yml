@@ -1,0 +1,58 @@
+services:
+
+  dafalabs-db:
+    image: postgres:16.3
+    container_name: dafalabs-db-local
+    ports:
+      - "5433:5432"
+    volumes:
+      - dafalabs-db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: dafalabs
+      POSTGRES_DB: dafalabs
+      POSTGRES_PASSWORD: dafalabs
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dafalabs"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  dafalabs-web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: dafalabs-web-local
+    ports:
+      - "8080:3000"
+    environment:
+      SITE_URL: "http://localhost:8080"
+      API_URL: "http://dafalabs-api:80"
+      API_INTERNAL_URL: "http://dafalabs-api:80"
+
+  dafalabs-api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: dafalabs-api-local
+    ports:
+      - "8001:80"
+    volumes:
+      - ./media:/media
+    depends_on:
+      dafalabs-db:
+        condition: service_healthy
+    environment:
+      SQLALCHEMY_DATABASE_URL: "postgresql+psycopg2://dafalabs:dafalabs@dafalabs-db:5432/dafalabs"
+      SESSION_SECRET: "yerel-gelistirme-icin-yeterince-uzun-anahtar"
+      COOKIE_SECURE: "0"
+      SITE_URL: "http://localhost:8080"
+
+      SMTP_SERVER: "${SMTP_SERVER:-localhost}"
+      SMTP_PORT: "${SMTP_PORT:-587}"
+      SENDER_EMAIL: "${SENDER_EMAIL:-noreply@dafalabs.com}"
+      SENDER_MAIL_PASSWORD: "${SENDER_MAIL_PASSWORD:-yerel-test}"
+      RECIPIENT_EMAIL: "${RECIPIENT_EMAIL:-kutu@dafalabs.com}"
+      RATE_LIMIT_MAX: "${RATE_LIMIT_MAX:-50}"
+
+volumes:
+  dafalabs-db-data:

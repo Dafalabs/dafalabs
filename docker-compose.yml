@@ -1,0 +1,91 @@
+services:
+
+  dafalabs-db:
+    image: postgres:16.3
+    container_name: dafalabs-db
+    restart: always
+    volumes:
+      - /var/lib/dafalabs-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_DB: "${POSTGRES_DB}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - reverse-proxy
+
+  dafalabs-web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: dafalabs-web
+    restart: always
+    environment:
+      SITE_URL: "${SITE_URL:-https://dafalabs.com}"
+      API_INTERNAL_URL: "http://dafalabs-api:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dafalabs-web.rule=Host(`dafalabs.com`) || Host(`www.dafalabs.com`)"
+      - "traefik.http.routers.dafalabs-web.entrypoints=websecure"
+      - "traefik.http.routers.dafalabs-web.tls.certresolver=myresolver"
+      - "traefik.http.services.dafalabs-web.loadbalancer.server.port=3000"
+      - "traefik.http.routers.dafalabs-web.middlewares=dafalabs-www-redirect"
+      - "traefik.http.middlewares.dafalabs-www-redirect.redirectregex.regex=^https://www\\.dafalabs\\.com/(.*)"
+      - "traefik.http.middlewares.dafalabs-www-redirect.redirectregex.replacement=https://dafalabs.com/$${1}"
+      - "traefik.http.middlewares.dafalabs-www-redirect.redirectregex.permanent=true"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - reverse-proxy
+
+  dafalabs-api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: dafalabs-api
+    restart: always
+    volumes:
+      - ./media:/media
+    depends_on:
+      dafalabs-db:
+        condition: service_healthy
+    environment:
+      SQLALCHEMY_DATABASE_URL: "postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@dafalabs-db:5432/${POSTGRES_DB}"
+      SESSION_SECRET: "${SESSION_SECRET}"
+      SITE_URL: "${SITE_URL:-https://dafalabs.com}"
+      SMTP_SERVER: "${SMTP_SERVER}"
+      SMTP_PORT: "${SMTP_PORT}"
+      SENDER_EMAIL: "${SENDER_EMAIL}"
+      SENDER_MAIL_PASSWORD: "${SENDER_MAIL_PASSWORD}"
+      RECIPIENT_EMAIL: "${RECIPIENT_EMAIL}"
+      RATE_LIMIT_MAX: "${RATE_LIMIT_MAX:-5}"
+      RATE_LIMIT_WINDOW: "${RATE_LIMIT_WINDOW:-3600}"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dafalabs-api.rule=Host(`api.dafalabs.com`)"
+      - "traefik.http.routers.dafalabs-api.entrypoints=websecure"
+      - "traefik.http.routers.dafalabs-api.tls.certresolver=myresolver"
+      - "traefik.http.services.dafalabs-api.loadbalancer.server.port=80"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - reverse-proxy
+
+networks:
+  reverse-proxy:
+    external: true

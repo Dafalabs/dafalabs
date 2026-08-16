@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "siteName": "dafalabs",
+    "tagline": "Software studio"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "work": "Work",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "skip": "Skip to content",
+    "login": "Sign in",
+    "tracking": "Message tracking",
+    "posts": "Writing"
+  },
+  "home": {
+    "title": "dafalabs — Software Studio",
+    "description": "dafalabs is a software studio that designs, builds and maintains mobile and web applications.",
+    "hero": {
+      "line1": "FROM IDEA",
+      "lede": "We design, build and keep running mobile and web applications — long after they ship.",
+      "cta": "Start a project",
+      "secondary": "See our work",
+      "scroll": "Scroll",
+      "rotating": [
+        "TO RELEASE",
+        "TO THE STORE",
+        "TO USERS",
+        "TO THE FIELD"
+      ]
+    },
+    "whatWeDo": {
+      "all": "All services"
+    },
+    "howWeWork": {
+      "label": "How we work",
+      "title": "Four steps, no surprises."
+    },
+    "cta": {
+      "label": "Get started",
+      "title": "Have a project in mind?",
+      "body": "An idea is enough to start. Tell us what you want to build and we will work out together whether it is feasible and what it would take.",
+      "button": "Get in touch"
+    }
+  },
+  "services": {
+    "title": "Services — dafalabs",
+    "description": "Mobile apps, web development, UI/UX design and technical consulting.",
+    "label": "Services",
+    "heading": "We take a project from start to finish.",
+    "lede": "The four areas below can be bought separately, but they work best together.",
+    "items": {
+      "mobile": {
+        "name": "Mobile Apps",
+        "short": "iOS and Android from a single codebase, delivered all the way to the store listing.",
+        "long": "iOS and Android from a single Flutter codebase. Store account setup, release management and submission are part of the job."
+      },
+      "web": {
+        "name": "Web",
+        "short": "Company sites and web applications. Fast to load, visible to search engines, easy to maintain.",
+        "long": "Company sites, web applications and the services behind them. Fast to load, visible to search engines, and maintainable a year later."
+      },
+      "design": {
+        "name": "UI/UX",
+        "short": "Flow before screens.",
+        "long": "We map the flow before drawing a screen. Designing an interface before knowing what job the user is trying to finish gets expensive later."
+      },
+      "consulting": {
+        "name": "Consulting",
+        "short": "A second opinion on architecture and technology choices for a project already under way.",
+        "long": "For a project already running: architecture review, a second opinion on technology choices, code quality and technical guidance for your team."
+      }
+    },
+    "cta": {
+      "title": "Not sure which service you need?",
+      "body": "That is how most projects start. Tell us what you want to build and we will work out together which parts apply."
+    }
+  },
+  "process": {
+    "steps": {
+      "talk": {
+        "name": "Conversation",
+        "body": "We listen to what you want to build. Free, and it commits you to nothing."
+      },
+      "scope": {
+        "name": "Scope and quote",
+        "body": "We break the work into items and put timing and budget in writing. No line items appear later."
+      },
+      "build": {
+        "name": "Development",
+        "body": "We ship a working build at regular intervals. You watch progress on a screen, not in a deck."
+      },
+      "ship": {
+        "name": "Launch and after",
+        "body": "We handle the store and the servers. Support continues after release."
+      }
+    }
+  },
+  "work": {
+    "title": "Work — dafalabs",
+    "description": "Mobile and web projects built by dafalabs.",
+    "label": "Work",
+    "heading": "What we are building.",
+    "lede": "The work we have taken on so far. Each card takes you straight to the project itself.",
+    "view": "View project",
+    "cta": {
+      "title": "The next project on this page could be yours.",
+      "body": "Everything on this page started the same way: with a conversation. Tell us what you want to build and we will map out the scope and timing together."
+    }
+  },
+  "contact": {
+    "title": "Contact — dafalabs",
+    "description": "Tell us about your project. The first conversation is free and commits you to nothing.",
+    "label": "Contact",
+    "heading": "Tell us about your project.",
+    "lede": "An idea is enough to start. The first conversation is free and commits you to nothing — we usually reply within 24 hours.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "subject": "Subject",
+      "subjectOptional": "(optional)",
+      "subjectPlaceholder": "Mobile app, website, consulting…",
+      "message": "Message",
+      "messagePlaceholder": "Describe what you want to build in a few sentences. Feel free to include timing and budget expectations.",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Your message reached us. We'll get back to you shortly.",
+      "error": "The message could not be sent. Please try again or email us directly.",
+      "rateLimit": "Too many attempts. Please try again in a few minutes.",
+      "trackingLabel": "Your tracking code",
+      "trackLink": "Check its status"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "response": "Response time",
+      "responseValue": "Usually within 24 hours"
+    },
+    "trackPrompt": "Sent us a message before?",
+    "trackCta": "Check its status with your tracking code"
+  },
+  "footer": {
+    "description": "A software studio that designs, builds and maintains mobile and web applications.",
+    "site": "Site",
+    "contact": "Contact",
+    "follow": "Follow",
+    "country": "Türkiye",
+    "account": "Account"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The address you were looking for may have moved, or never existed.",
+    "home": "Home"
+  },
+  "login": {
+    "title": "Sign in — dafalabs",
+    "description": "Client sign in.",
+    "label": "Sign in",
+    "heading": "Sign in to your account.",
+    "lede": "After signing in you will be taken to the page set up for you.",
+    "email": "Email",
+    "emailPlaceholder": "you@company.com",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "submit": "Sign in",
+    "sending": "Checking…",
+    "error": "Email or password is incorrect.",
+    "rateLimit": "Too many attempts. Please try again shortly.",
+    "offline": "Sign in is unavailable right now. Please try again later.",
+    "success": "Signed in, redirecting…"
+  },
+  "tracking": {
+    "title": "Message Tracking — dafalabs",
+    "description": "Check the status of the message you sent us.",
+    "label": "Tracking",
+    "heading": "Check your message status.",
+    "lede": "When you sent the form we emailed you a tracking code. Enter it here to see where your message stands.",
+    "code": "Tracking code",
+    "codePlaceholder": "DL-XXXX-XXXX",
+    "submit": "Check",
+    "sending": "Checking…",
+    "notFound": "No record found for this code. Could you check it?",
+    "error": "The lookup failed. Please try again later.",
+    "rateLimit": "Too many lookups. Please try again shortly.",
+    "resultTitle": "Your message is on file",
+    "statusLabel": "Status",
+    "createdLabel": "Sent",
+    "answeredLabel": "Answered",
+    "statusReceived": "Received",
+    "statusReviewing": "In review",
+    "statusAnswered": "Answered",
+    "statusClosed": "Closed",
+    "statusUnknown": "On file",
+    "statusReceivedNote": "Your message reached us and is in the queue.",
+    "statusReviewingNote": "We have read it and are working on it.",
+    "statusAnsweredNote": "We replied by email. Please check your inbox.",
+    "statusClosedNote": "This thread is closed. Feel free to write again about something new."
+  },
+  "error": {
+    "label": "Error",
+    "heading": "Something went wrong.",
+    "body": "An unexpected error occurred. Trying again may help; if it keeps happening, get in touch.",
+    "retry": "Try again"
+  },
+  "panel": {
+    "title": "Panel — dafalabs",
+    "heading": "Incoming messages",
+    "logout": "Sign out",
+    "search": "Search",
+    "searchPlaceholder": "Name, email, subject or tracking code",
+    "all": "All",
+    "empty": "No messages match this filter.",
+    "emptyAll": "No messages yet.",
+    "from": "From",
+    "subject": "Subject",
+    "noSubject": "No subject",
+    "received": "Received",
+    "code": "Tracking code",
+    "changeStatus": "Change status",
+    "saving": "Saving…",
+    "mailError": "The email for this message could not be sent",
+    "replyLink": "Reply",
+    "page": "Page",
+    "prev": "Previous",
+    "next": "Next",
+    "total": "messages in total",
+    "tabMessages": "Messages",
+    "tabProjects": "Projects",
+    "newProject": "New project",
+    "editProject": "Edit project",
+    "slug": "Slug",
+    "slugHint": "lowercase, no spaces — internal identifier",
+    "titleTr": "Title (TR)",
+    "taglineTr": "Description (TR)",
+    "titleEn": "Title (EN)",
+    "taglineEn": "Description (EN)",
+    "projectUrl": "Link target",
+    "projectUrlHint": "leave empty to make the card non-clickable",
+    "image": "Image",
+    "upload": "Choose file",
+    "uploading": "Uploading…",
+    "imageHint": "cropped to 16:10, 1200×750 recommended",
+    "removeImage": "Remove",
+    "tags": "Tags",
+    "tagsHint": "comma separated",
+    "order": "Order",
+    "published": "Published",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirmDelete": "Delete this project?",
+    "noProjects": "No projects yet.",
+    "saveError": "Could not save. Check the fields.",
+    "slugTaken": "That slug is already in use.",
+    "uploadError": "The image could not be uploaded.",
+    "draft": "Draft",
+    "headingProjects": "Projects",
+    "projectCount": "projects",
+    "tabUsers": "Accounts",
+    "tabSettings": "Settings",
+    "headingUsers": "Accounts",
+    "headingSettings": "Site settings",
+    "userCount": "accounts",
+    "newUser": "New account",
+    "editUser": "Edit account",
+    "email": "Email",
+    "name": "Name",
+    "redirectUrl": "Redirect after sign in",
+    "redirectHint": "not used for admin accounts, they go to the panel",
+    "isAdmin": "Admin",
+    "isActive": "Active",
+    "passwordOptional": "Password",
+    "passwordHint": "leave empty to generate one",
+    "resetPassword": "Reset password",
+    "newPasswordTitle": "Password created",
+    "newPasswordNote": "This password will not be shown again. Copy it now.",
+    "close": "Close",
+    "noUsers": "No accounts yet.",
+    "lastLogin": "last sign in",
+    "never": "never",
+    "roleAdmin": "admin",
+    "roleClient": "client",
+    "inactive": "inactive",
+    "emailTaken": "That email is already registered.",
+    "selfLocked": "You cannot remove your own access.",
+    "confirmDeleteUser": "Delete this account?",
+    "settingsSaved": "Settings saved.",
+    "sourceEnv": "from env",
+    "sourceDb": "from database",
+    "settingsHint": "Empty fields are hidden on the site. Clearing a field falls back to the .env value.",
+    "settingEmail": "Email",
+    "settingPhone": "Phone",
+    "settingLocation": "Location",
+    "settingGithub": "GitHub",
+    "settingLinkedin": "LinkedIn",
+    "settingInstagram": "Instagram",
+    "settingX": "X",
+    "tabPosts": "Writing",
+    "headingPosts": "Writing",
+    "postCount": "posts",
+    "newPost": "New post",
+    "editPost": "Edit post",
+    "postSlug": "Slug",
+    "postSlugHint": "/en/writing/<this-part>",
+    "postTitle": "Title",
+    "postExcerpt": "Excerpt",
+    "postBody": "Body (markdown)",
+    "postTr": "Turkish",
+    "postEn": "English",
+    "langHint": "A post is published in a language when both its title and body are filled. Leave them empty to hide it in that language.",
+    "cover": "Cover image",
+    "noPosts": "No posts yet.",
+    "confirmDeletePost": "Delete this post?",
+    "onlyTr": "TR only",
+    "onlyEn": "EN only",
+    "bothLangs": "TR + EN",
+    "noLang": "no content"
+  },
+  "posts": {
+    "title": "Writing — dafalabs",
+    "description": "Technical notes from the dafalabs team.",
+    "label": "Writing",
+    "heading": "What we write.",
+    "lede": "Things we learned while building. Mostly technical, all of it from real work.",
+    "empty": "No posts yet.",
+    "readingTime": "min read",
+    "back": "All posts",
+    "onlyInOther": "This post is only available in the other language.",
+    "goToList": "Back to writing"
+  }
+}

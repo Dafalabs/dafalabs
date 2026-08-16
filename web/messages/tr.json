@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "siteName": "dafalabs",
+    "tagline": "Yazılım stüdyosu"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "work": "Projeler",
+    "contact": "İletişim",
+    "menu": "Menü",
+    "close": "Kapat",
+    "skip": "İçeriğe geç",
+    "login": "Giriş",
+    "tracking": "Mesaj takibi",
+    "posts": "Yazılar"
+  },
+  "home": {
+    "title": "dafalabs — Yazılım Stüdyosu",
+    "description": "dafalabs; mobil ve web uygulamaları tasarlayan, geliştiren ve yayında tutan bir yazılım stüdyosudur.",
+    "hero": {
+      "line1": "FİKİRDEN",
+      "lede": "Mobil ve web uygulamalarını tasarlıyor, geliştiriyor ve yayına aldıktan sonra da ayakta tutuyoruz.",
+      "cta": "Projeni konuşalım",
+      "secondary": "Projelerimiz",
+      "scroll": "Kaydır",
+      "rotating": [
+        "YAYINA",
+        "MAĞAZAYA",
+        "KULLANICIYA",
+        "SAHAYA"
+      ]
+    },
+    "whatWeDo": {
+      "all": "Tüm hizmetler"
+    },
+    "howWeWork": {
+      "label": "Nasıl çalışıyoruz",
+      "title": "Dört adım, sürprizsiz."
+    },
+    "cta": {
+      "label": "Başlayalım",
+      "title": "Aklında bir proje mi var?",
+      "body": "Fikir aşamasında olman yeterli. Ne yapmak istediğini anlat, teknik tarafın mümkün olup olmadığını ve neye mal olacağını beraber netleştirelim.",
+      "button": "İletişime geç"
+    }
+  },
+  "services": {
+    "title": "Hizmetler — dafalabs",
+    "description": "Mobil uygulama, web geliştirme, UI/UX tasarım ve teknik danışmanlık.",
+    "label": "Hizmetler",
+    "heading": "Bir işi baştan sona üstleniyoruz.",
+    "lede": "Aşağıdaki dört başlık ayrı ayrı da alınabilir, ama en iyi sonucu birlikte yürüdüklerinde veriyorlar.",
+    "items": {
+      "mobile": {
+        "name": "Mobil Uygulama",
+        "short": "iOS ve Android için tek kod tabanından üretilen, mağazaya kadar teslim edilen uygulamalar.",
+        "long": "Flutter ile tek kod tabanından iOS ve Android. Mağaza hesaplarının kurulumu, sürüm yönetimi ve yayın süreci dahil."
+      },
+      "web": {
+        "name": "Web",
+        "short": "Kurumsal siteler ve web uygulamaları. Hızlı açılan, arama motorlarında görünen, bakımı kolay.",
+        "long": "Kurumsal siteler, web uygulamaları ve arka uç servisleri. Hızlı açılan, arama motorlarında görünen ve sonradan bakımı yapılabilen kod."
+      },
+      "design": {
+        "name": "UI/UX",
+        "short": "Ekran tasarımından önce akış kurgusu.",
+        "long": "Ekran çizmeden önce akışı kuruyoruz. Kullanıcının hangi işi bitirmeye çalıştığı netleşmeden arayüz tasarlamak, sonradan pahalıya patlıyor."
+      },
+      "consulting": {
+        "name": "Danışmanlık",
+        "short": "Devam eden bir projede mimari ve teknoloji seçimi üzerine ikinci görüş.",
+        "long": "Devam eden bir projen varsa: mimari incelemesi, teknoloji seçiminde ikinci görüş, kod kalitesi ve ekip için teknik yönlendirme."
+      }
+    },
+    "cta": {
+      "title": "Hangi hizmete ihtiyacın olduğundan emin değil misin?",
+      "body": "Sorun değil — çoğu proje böyle başlıyor. Ne yapmak istediğini anlat, hangi başlıkların gerektiğini beraber çıkaralım."
+    }
+  },
+  "process": {
+    "steps": {
+      "talk": {
+        "name": "Konuşma",
+        "body": "Ne yapmak istediğini dinliyoruz. Bu aşama ücretsiz ve bir taahhüt gerektirmiyor."
+      },
+      "scope": {
+        "name": "Kapsam ve teklif",
+        "body": "İşi maddelere bölüp süre ve bütçeyi yazılı veriyoruz. Sonradan çıkan kalem olmuyor."
+      },
+      "build": {
+        "name": "Geliştirme",
+        "body": "Düzenli aralıklarla çalışan sürüm gösteriyoruz. İlerlemeyi ekranda görüyorsun."
+      },
+      "ship": {
+        "name": "Yayın ve sonrası",
+        "body": "Mağazaya ve sunucuya biz çıkıyoruz. Yayından sonra da destek devam ediyor."
+      }
+    }
+  },
+  "work": {
+    "title": "Projeler — dafalabs",
+    "description": "dafalabs'in geliştirdiği mobil ve web projeleri.",
+    "label": "Projeler",
+    "heading": "Üzerinde çalıştıklarımız.",
+    "lede": "Şu ana kadar üzerinde çalıştığımız işler. Bir karta tıkladığında doğrudan projenin kendi sayfasına gidiyorsun.",
+    "view": "Projeyi incele",
+    "cta": {
+      "title": "Bu listedeki bir sonraki iş seninki olabilir.",
+      "body": "Burada gördüğün her iş aynı şekilde başladı: bir konuşmayla. Ne yapmak istediğini anlat, kapsamı ve süreyi beraber çıkaralım."
+    }
+  },
+  "contact": {
+    "title": "İletişim — dafalabs",
+    "description": "Projeni anlat. İlk görüşme ücretsiz ve taahhütsüz.",
+    "label": "İletişim",
+    "heading": "Projeni anlat.",
+    "lede": "Fikir aşamasında olman yeterli. İlk görüşme ücretsiz ve hiçbir taahhüt gerektirmiyor — genelde 24 saat içinde dönüş yapıyoruz.",
+    "form": {
+      "name": "Ad Soyad",
+      "namePlaceholder": "Adın ve soyadın",
+      "email": "E-posta",
+      "emailPlaceholder": "ornek@sirket.com",
+      "subject": "Konu",
+      "subjectOptional": "(isteğe bağlı)",
+      "subjectPlaceholder": "Mobil uygulama, web sitesi, danışmanlık…",
+      "message": "Mesaj",
+      "messagePlaceholder": "Ne yapmak istediğini birkaç cümleyle anlat. Varsa süre ve bütçe beklentini de yazabilirsin.",
+      "submit": "Mesajı gönder",
+      "sending": "Gönderiliyor…",
+      "success": "Mesajın bize ulaştı. En kısa sürede dönüş yapacağız.",
+      "error": "Mesaj gönderilemedi. Lütfen tekrar dene veya doğrudan e-posta yaz.",
+      "rateLimit": "Çok fazla deneme yapıldı. Lütfen birkaç dakika sonra tekrar dene.",
+      "trackingLabel": "Takip kodun",
+      "trackLink": "Durumunu sorgula"
+    },
+    "info": {
+      "email": "E-posta",
+      "phone": "Telefon",
+      "location": "Konum",
+      "response": "Yanıt süresi",
+      "responseValue": "Genelde 24 saat içinde"
+    },
+    "trackPrompt": "Daha önce mesaj gönderdin mi?",
+    "trackCta": "Takip kodunla durumunu sorgula"
+  },
+  "footer": {
+    "description": "Mobil ve web uygulamaları tasarlayan, geliştiren ve yayında tutan bir yazılım stüdyosu.",
+    "site": "Site",
+    "contact": "İletişim",
+    "follow": "Takip",
+    "country": "Türkiye",
+    "account": "Hesap"
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı",
+    "body": "Aradığın adres taşınmış ya da hiç var olmamış olabilir.",
+    "home": "Ana sayfa"
+  },
+  "login": {
+    "title": "Giriş — dafalabs",
+    "description": "Müşteri girişi.",
+    "label": "Giriş",
+    "heading": "Hesabına giriş yap.",
+    "lede": "Giriş yaptıktan sonra sana ayrılmış sayfaya yönlendirileceksin.",
+    "email": "E-posta",
+    "emailPlaceholder": "ornek@sirket.com",
+    "password": "Parola",
+    "passwordPlaceholder": "Parolan",
+    "submit": "Giriş yap",
+    "sending": "Kontrol ediliyor…",
+    "error": "E-posta veya parola hatalı.",
+    "rateLimit": "Çok fazla deneme yapıldı. Lütfen biraz sonra tekrar dene.",
+    "offline": "Şu anda giriş yapılamıyor. Lütfen daha sonra tekrar dene.",
+    "success": "Giriş başarılı, yönlendiriliyorsun…"
+  },
+  "tracking": {
+    "title": "Mesaj Takibi — dafalabs",
+    "description": "İletişim formundan gönderdiğin mesajın durumunu sorgula.",
+    "label": "Takip",
+    "heading": "Mesajının durumunu sorgula.",
+    "lede": "Formu gönderdiğinde sana e-postayla bir takip kodu ulaştı. Kodu buraya girerek mesajının durumunu görebilirsin.",
+    "code": "Takip kodu",
+    "codePlaceholder": "DL-XXXX-XXXX",
+    "submit": "Sorgula",
+    "sending": "Sorgulanıyor…",
+    "notFound": "Bu koda ait bir kayıt bulunamadı. Kodu kontrol eder misin?",
+    "error": "Sorgulama yapılamadı. Lütfen daha sonra tekrar dene.",
+    "rateLimit": "Çok fazla sorgu yapıldı. Lütfen biraz sonra tekrar dene.",
+    "resultTitle": "Mesajın kayıtlı",
+    "statusLabel": "Durum",
+    "createdLabel": "Gönderildi",
+    "answeredLabel": "Yanıtlandı",
+    "statusReceived": "Alındı",
+    "statusReviewing": "İnceleniyor",
+    "statusAnswered": "Yanıtlandı",
+    "statusClosed": "Kapandı",
+    "statusUnknown": "Kayıtlı",
+    "statusReceivedNote": "Mesajın bize ulaştı, sıraya alındı.",
+    "statusReviewingNote": "Mesajını okuduk, üzerinde çalışıyoruz.",
+    "statusAnsweredNote": "Sana e-postayla dönüş yaptık. Gelen kutunu kontrol et.",
+    "statusClosedNote": "Bu görüşme kapandı. Yeni bir konu için tekrar yazabilirsin."
+  },
+  "error": {
+    "label": "Hata",
+    "heading": "Bir şeyler ters gitti.",
+    "body": "Beklenmeyen bir hata oluştu. Tekrar denemek işe yarayabilir; sorun sürerse bize yazabilirsin.",
+    "retry": "Tekrar dene"
+  },
+  "panel": {
+    "title": "Panel — dafalabs",
+    "heading": "Gelen mesajlar",
+    "logout": "Çıkış",
+    "search": "Ara",
+    "searchPlaceholder": "Ad, e-posta, konu veya takip kodu",
+    "all": "Tümü",
+    "empty": "Bu filtreye uyan mesaj yok.",
+    "emptyAll": "Henüz mesaj gelmemiş.",
+    "from": "Gönderen",
+    "subject": "Konu",
+    "noSubject": "Konu belirtilmedi",
+    "received": "Geliş",
+    "code": "Takip kodu",
+    "changeStatus": "Durumu değiştir",
+    "saving": "Kaydediliyor…",
+    "mailError": "Bu mesajın maili gönderilemedi",
+    "replyLink": "Yanıtla",
+    "page": "Sayfa",
+    "prev": "Önceki",
+    "next": "Sonraki",
+    "total": "toplam mesaj",
+    "tabMessages": "Mesajlar",
+    "tabProjects": "Projeler",
+    "newProject": "Yeni proje",
+    "editProject": "Projeyi düzenle",
+    "slug": "Adres kısaltması",
+    "slugHint": "küçük harf, boşluksuz — /tr/projeler adresinde kullanılmaz, sadece kimlik",
+    "titleTr": "Başlık (TR)",
+    "taglineTr": "Açıklama (TR)",
+    "titleEn": "Başlık (EN)",
+    "taglineEn": "Açıklama (EN)",
+    "projectUrl": "Gidilecek adres",
+    "projectUrlHint": "boş bırakılırsa kart tıklanamaz",
+    "image": "Görsel",
+    "upload": "Dosya seç",
+    "uploading": "Yükleniyor…",
+    "imageHint": "16:10 oranında kırpılır, 1200×750 önerilir",
+    "removeImage": "Kaldır",
+    "tags": "Etiketler",
+    "tagsHint": "virgülle ayır",
+    "order": "Sıra",
+    "published": "Yayında",
+    "save": "Kaydet",
+    "cancel": "Vazgeç",
+    "delete": "Sil",
+    "confirmDelete": "Bu proje silinsin mi?",
+    "noProjects": "Henüz proje eklenmemiş.",
+    "saveError": "Kaydedilemedi. Alanları kontrol et.",
+    "slugTaken": "Bu adres kısaltması zaten kullanılıyor.",
+    "uploadError": "Görsel yüklenemedi.",
+    "draft": "Taslak",
+    "headingProjects": "Projeler",
+    "projectCount": "proje",
+    "tabUsers": "Hesaplar",
+    "tabSettings": "Ayarlar",
+    "headingUsers": "Hesaplar",
+    "headingSettings": "Site ayarları",
+    "userCount": "hesap",
+    "newUser": "Yeni hesap",
+    "editUser": "Hesabı düzenle",
+    "email": "E-posta",
+    "name": "Ad",
+    "redirectUrl": "Giriş sonrası gideceği adres",
+    "redirectHint": "yönetici hesaplarında kullanılmaz, panele gider",
+    "isAdmin": "Yönetici",
+    "isActive": "Aktif",
+    "passwordOptional": "Parola",
+    "passwordHint": "boş bırakırsan rastgele üretilir",
+    "resetPassword": "Parolayı sıfırla",
+    "newPasswordTitle": "Parola oluşturuldu",
+    "newPasswordNote": "Bu parola bir daha gösterilmeyecek. Şimdi kopyala.",
+    "close": "Kapat",
+    "noUsers": "Kayıtlı hesap yok.",
+    "lastLogin": "son giriş",
+    "never": "hiç",
+    "roleAdmin": "yönetici",
+    "roleClient": "müşteri",
+    "inactive": "pasif",
+    "emailTaken": "Bu e-posta zaten kayıtlı.",
+    "selfLocked": "Kendi yetkini veya hesabını kaldıramazsın.",
+    "confirmDeleteUser": "Bu hesap silinsin mi?",
+    "settingsSaved": "Ayarlar kaydedildi.",
+    "sourceEnv": "env'den",
+    "sourceDb": "veritabanından",
+    "settingsHint": "Boş bırakılan alan sayfada görünmez. Tamamen boşaltırsan .env değeri devreye girer.",
+    "settingEmail": "E-posta",
+    "settingPhone": "Telefon",
+    "settingLocation": "Konum",
+    "settingGithub": "GitHub",
+    "settingLinkedin": "LinkedIn",
+    "settingInstagram": "Instagram",
+    "settingX": "X",
+    "tabPosts": "Yazılar",
+    "headingPosts": "Yazılar",
+    "postCount": "yazı",
+    "newPost": "Yeni yazı",
+    "editPost": "Yazıyı düzenle",
+    "postSlug": "Adres kısaltması",
+    "postSlugHint": "/tr/yazilar/<bu-kısım>",
+    "postTitle": "Başlık",
+    "postExcerpt": "Özet",
+    "postBody": "Gövde (markdown)",
+    "postTr": "Türkçe",
+    "postEn": "İngilizce",
+    "langHint": "Bir dilin başlığı ve gövdesi doluysa yazı o dilde yayınlanır. Boş bırakırsan o dilde hiç görünmez.",
+    "cover": "Kapak görseli",
+    "noPosts": "Henüz yazı yok.",
+    "confirmDeletePost": "Bu yazı silinsin mi?",
+    "onlyTr": "yalnız TR",
+    "onlyEn": "yalnız EN",
+    "bothLangs": "TR + EN",
+    "noLang": "içerik yok"
+  },
+  "posts": {
+    "title": "Yazılar — dafalabs",
+    "description": "dafalabs ekibinin yazdığı teknik yazılar.",
+    "label": "Yazılar",
+    "heading": "Yazdıklarımız.",
+    "lede": "Üzerinde çalışırken öğrendiklerimiz. Çoğu teknik, hepsi bir işten çıkmış.",
+    "empty": "Henüz yazı yok.",
+    "readingTime": "dakikalık okuma",
+    "back": "Tüm yazılar",
+    "onlyInOther": "Bu yazı yalnızca diğer dilde mevcut.",
+    "goToList": "Yazılara dön"
+  }
+}

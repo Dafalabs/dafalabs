@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" width="220" height="44">
+  <rect x="1" y="1" width="42" height="42" rx="10" fill="#131b2a" stroke="#e0a33c" stroke-opacity=".5"/>
+  <text x="22" y="31" text-anchor="middle" font-size="24" font-weight="700"
+        fill="#e0a33c" font-family="ui-sans-serif,system-ui,sans-serif">d</text>
+  <text x="56" y="30" font-size="21" font-weight="700" letter-spacing="-.5"
+        font-family="ui-sans-serif,system-ui,sans-serif">
+    <tspan fill="#eef1f6">dafa</tspan><tspan fill="#e0a33c">labs</tspan>
+  </text>
+</svg>
