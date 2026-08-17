@@ -331,6 +331,7 @@
     "readingTime": "dakikalık okuma",
     "back": "Tüm yazılar",
     "onlyInOther": "Bu yazı yalnızca diğer dilde mevcut.",
-    "goToList": "Yazılara dön"
+    "goToList": "Yazılara dön",
+    "all": "Tüm yazılar"
   }
 }

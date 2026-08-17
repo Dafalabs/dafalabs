@@ -331,6 +331,7 @@
     "readingTime": "min read",
     "back": "All posts",
     "onlyInOther": "This post is only available in the other language.",
-    "goToList": "Back to writing"
+    "goToList": "Back to writing",
+    "all": "All posts"
   }
 }

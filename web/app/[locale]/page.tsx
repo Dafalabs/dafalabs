@@ -5,6 +5,8 @@ import type { Locale } from "@/i18n/routing";
 import { pageAlternates } from "@/lib/seo";
 import { CtaBand } from "@/components/cta-band";
 import { Hero } from "@/components/hero";
+import { HomePosts } from "@/components/home-posts";
+import { Marquee } from "@/components/marquee";
 import { getSiteContent } from "@/lib/api";
 import { Reveal, RevealLine, RevealText } from "@/components/motion-primitives";
 import { ProcessSteps } from "@/components/process-steps";
@@ -31,7 +33,12 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   const t = await getTranslations("home");
+  const services = await getTranslations("services.items");
   const { projects } = await getSiteContent();
+
+  const marquee = ["mobile", "web", "design", "consulting"].map((key) =>
+    services(`${key}.name` as "mobile.name"),
+  );
 
   return (
     <>
@@ -43,6 +50,8 @@ export default async function HomePage({
         secondary={projects.length > 0 ? t("hero.secondary") : null}
         scroll={t("hero.scroll")}
       />
+
+      <Marquee items={marquee} />
 
       <section className="py-28 md:py-40">
         <div className="container-page">
@@ -81,6 +90,8 @@ export default async function HomePage({
           </div>
         </div>
       </section>
+
+      <HomePosts locale={locale as Locale} />
 
       <CtaBand
         label={t("cta.label")}
