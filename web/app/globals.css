@@ -107,3 +107,9 @@ html.lenis body {
   padding-bottom: 0.14em;
   margin-bottom: -0.14em;
 }
+
+@utility outline-type {
+  color: transparent;
+  -webkit-text-stroke: 0.055rem var(--color-bone);
+  paint-order: stroke fill;
+}
