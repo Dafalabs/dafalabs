@@ -83,10 +83,24 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -p "$PORT" "$USER@$HOST" \
             DIR="$DIR" 'bash -euo pipefail -s' <<'REMOTE'
           cd "$DIR"
+          started=$(date -u +%s)
+
           git fetch --prune origin
           git reset --hard origin/main
+
           docker compose up -d --build --remove-orphans
+          docker compose up -d --force-recreate --no-deps dafalabs-web dafalabs-api
           docker image prune -f
+
+          for name in dafalabs-web dafalabs-api; do
+            created=$(docker inspect -f '{{.Created}}' "$name")
+            epoch=$(date -u -d "$created" +%s 2>/dev/null || echo 0)
+            if [ "$epoch" -lt "$started" ]; then
+              echo "$name was not recreated (created $created, deploy started $(date -u -d @$started))"
+              exit 1
+            fi
+            echo "$name recreated at $created"
+          done
           REMOTE
 
       - name: Verify
