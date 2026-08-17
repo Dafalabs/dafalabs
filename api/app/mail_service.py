@@ -33,7 +33,7 @@ COPY = {
         "body": "Mesajınız bize ulaştı ve sıraya alındı. Genelde 24 saat içinde dönüş yapıyoruz.",
         "code_label": "Takip kodunuz",
         "cta": "Durumu sorgula",
-        "footer": "Bu maili doğrudan yanıtlayabilirsiniz, mesajınız bize ulaşır.",
+        "footer": "Bu otomatik bir bilgilendirme mesajıdır. Yanıtlarsanız bize ulaşır.",
         "tracking_path": "/tr/takip",
     },
     "en": {
@@ -43,7 +43,7 @@ COPY = {
         "body": "Your message reached us and is in the queue. We usually reply within 24 hours.",
         "code_label": "Your tracking code",
         "cta": "Check status",
-        "footer": "You can reply directly to this email — it reaches us.",
+        "footer": "This is an automated confirmation. Replies still reach us.",
         "tracking_path": "/en/tracking",
     },
 }
