@@ -3,9 +3,9 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 
-const EASE = [0.16, 1, 0.3, 1] as const;
 const WIPE = [0.76, 0, 0.24, 1] as const;
 const HOLD = 3200;
+const STAGGER = 0.04;
 
 export function RotatingHeadline({
   fixed,
@@ -34,7 +34,7 @@ export function RotatingHeadline({
   return (
     <h1 className="display-xl">
       <span className="outline-type block">
-        <Chars text={fixed} delay={base} reduced={reduced} />
+        <Chars text={fixed} base={base} />
       </span>
 
       <span className="mask-line block pl-[8vw] text-brass md:pl-[14vw]">
@@ -59,30 +59,18 @@ export function RotatingHeadline({
   );
 }
 
-function Chars({
-  text,
-  delay,
-  reduced,
-}: {
-  text: string;
-  delay: number;
-  reduced: boolean | null;
-}) {
-  if (reduced) return <span className="block">{text}</span>;
-
+function Chars({ text, base }: { text: string; base: number }) {
   return (
     <span className="block">
       <span className="sr-only">{text}</span>
       {Array.from(text).map((char, index) => (
         <span key={`${char}-${index}`} className="mask-line inline-block" aria-hidden>
-          <motion.span
-            className="inline-block will-change-transform"
-            initial={{ y: "115%", rotate: 5 }}
-            animate={{ y: 0, rotate: 0 }}
-            transition={{ duration: 1.1, ease: EASE, delay: delay + index * 0.045 }}
+          <span
+            className="rise inline-block motion-reduce:animate-none"
+            style={{ animationDelay: `${base + index * STAGGER}s` }}
           >
             {char}
-          </motion.span>
+          </span>
         </span>
       ))}
     </span>

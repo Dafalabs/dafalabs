@@ -11,7 +11,7 @@ export function ConsentScript() {
     <>
       <link rel="preconnect" href={origin} />
       <link rel="preconnect" href="https://api-prod.secureprivacy.ai" />
-      <Script src={src} strategy="beforeInteractive" />
+      <Script src={src} strategy="afterInteractive" />
     </>
   );
 }
@@ -25,9 +25,9 @@ export function Analytics() {
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="gtag-init" strategy="afterInteractive">
+      <Script id="gtag-init" strategy="lazyOnload">
         {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());

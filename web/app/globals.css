@@ -125,6 +125,19 @@ html.lenis body {
   background-size: 76px 76px;
 }
 
+@keyframes rise-in {
+  from {
+    transform: translateY(115%) rotate(5deg);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@utility rise {
+  animation: rise-in 0.75s var(--ease-out-expo) both;
+}
+
 @utility outline-type {
   color: transparent;
   -webkit-text-stroke: 0.055rem var(--color-bone);

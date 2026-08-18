@@ -2,7 +2,6 @@
 
 import type { MotionValue } from "motion/react";
 import {
-  AnimatePresence,
   motion,
   useMotionValue,
   useReducedMotion,
@@ -10,13 +9,12 @@ import {
   useSpring,
   useTransform,
 } from "motion/react";
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef } from "react";
 
 import { RotatingHeadline } from "@/components/rotating-headline";
 import { Link } from "@/i18n/navigation";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
-const INTRO_KEY = "dafalabs-intro";
 
 type HeroProps = {
   line1: string;
@@ -27,34 +25,10 @@ type HeroProps = {
   scroll: string;
 };
 
-const subscribeIntro = () => () => {};
-const introSeenOnClient = () => sessionStorage.getItem(INTRO_KEY) !== null;
-const introSeenOnServer = () => true;
 
 export function Hero({ line1, rotating, lede, cta, secondary, scroll }: HeroProps) {
-  const reduced = useReducedMotion();
-  const seen = useSyncExternalStore(
-    subscribeIntro,
-    introSeenOnClient,
-    introSeenOnServer,
-  );
-  const [dismissed, setDismissed] = useState(false);
-
-  const showCurtain = !seen && !reduced && !dismissed;
-
-  const finishIntro = () => {
-    sessionStorage.setItem(INTRO_KEY, "1");
-    setDismissed(true);
-  };
-
-  const base = showCurtain ? 1.15 : 0.1;
-
   return (
     <>
-      <AnimatePresence>
-        {showCurtain && <Curtain onDone={finishIntro} />}
-      </AnimatePresence>
-
       <HeroSection
         line1={line1}
         rotating={rotating}
@@ -62,53 +36,9 @@ export function Hero({ line1, rotating, lede, cta, secondary, scroll }: HeroProp
         cta={cta}
         secondary={secondary}
         scroll={scroll}
-        base={base}
+        base={0.05}
       />
     </>
-  );
-}
-
-function Curtain({ onDone }: { onDone: () => void }) {
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    const timer = window.setTimeout(() => {
-      document.body.style.overflow = "";
-      onDone();
-    }, 1200);
-    return () => {
-      document.body.style.overflow = "";
-      window.clearTimeout(timer);
-    };
-  }, [onDone]);
-
-  return (
-    <motion.div
-      className="fixed inset-0 z-100 flex items-center justify-center bg-ink"
-      initial={{ y: 0 }}
-      exit={{ y: "-100%" }}
-      transition={{ duration: 0.8, ease: EASE }}
-    >
-      <div className="flex flex-col items-center gap-6">
-        <motion.span
-          className="font-display text-3xl font-semibold tracking-tight"
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: EASE }}
-        >
-          dafa<span className="text-brass">labs</span>
-        </motion.span>
-
-        <div className="h-px w-40 overflow-hidden bg-line">
-          <motion.div
-            className="h-px w-full bg-brass"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.95, ease: [0.65, 0, 0.35, 1], delay: 0.1 }}
-            style={{ transformOrigin: "left" }}
-          />
-        </div>
-      </div>
-    </motion.div>
   );
 }
 
