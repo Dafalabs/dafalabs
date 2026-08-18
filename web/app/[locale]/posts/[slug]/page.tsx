@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { getPost } from "@/lib/api";
 import { postAlternates } from "@/lib/seo";
+import { ArticleSchema } from "@/components/structured-data";
 
 export const revalidate = 30;
 
@@ -62,6 +63,15 @@ export default async function PostPage({
 
   return (
     <article className="pb-24 pt-36 md:pt-48">
+      <ArticleSchema
+        title={post.title}
+        excerpt={post.excerpt}
+        slug={slug}
+        locale={locale}
+        publishedAt={post.published_at}
+        image={post.cover_image}
+      />
+
       <div className="container-page">
         <Reveal>
           <div className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs text-ash">

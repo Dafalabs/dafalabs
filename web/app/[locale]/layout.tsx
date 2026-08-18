@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/site-footer";
 import { Analytics, Consent } from "@/components/analytics";
 import { Cursor } from "@/components/cursor";
+import { OrganizationSchema } from "@/components/structured-data";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { routing, type Locale } from "@/i18n/routing";
@@ -54,6 +55,7 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
     },
+    twitter: { card: "summary_large_image" },
   };
 }
 
@@ -74,6 +76,7 @@ export default async function LocaleLayout({
   const hasProjects = projects.length > 0;
   const hasPosts = posts.length > 0;
   const t = await getTranslations("nav");
+  const meta = await getTranslations("home");
 
   return (
     <html
@@ -90,6 +93,12 @@ export default async function LocaleLayout({
           >
             {t("skip")}
           </a>
+
+          <OrganizationSchema
+            contact={contact}
+            locale={locale}
+            description={meta("description")}
+          />
 
           <Analytics />
           <Cursor />
