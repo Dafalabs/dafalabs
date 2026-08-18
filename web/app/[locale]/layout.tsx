@@ -5,7 +5,7 @@ import { Archivo, Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 
 import { SiteFooter } from "@/components/site-footer";
-import { Analytics, ConsentScript } from "@/components/analytics";
+import { Analytics, Consent } from "@/components/analytics";
 import { Cursor } from "@/components/cursor";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
@@ -81,7 +81,7 @@ export default async function LocaleLayout({
       className={`${archivo.variable} ${instrument.variable} ${jetbrains.variable}`}
     >
       <body className="bg-ink text-bone antialiased">
-        <ConsentScript />
+        <Consent />
 
         <NextIntlClientProvider>
           <a

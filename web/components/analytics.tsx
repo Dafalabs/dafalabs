@@ -1,17 +1,16 @@
 import Script from "next/script";
 
-export function ConsentScript() {
+import { ConsentScript } from "@/components/consent-script";
+
+export function Consent() {
   const src = process.env.CONSENT_SCRIPT_URL?.trim();
 
   if (!src) return null;
 
-  const origin = new URL(src).origin;
-
   return (
     <>
-      <link rel="preconnect" href={origin} />
-      <link rel="preconnect" href="https://api-prod.secureprivacy.ai" />
-      <Script src={src} strategy="afterInteractive" />
+      <link rel="preconnect" href={new URL(src).origin} />
+      <ConsentScript src={src} />
     </>
   );
 }
@@ -25,9 +24,9 @@ export function Analytics() {
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
-      <Script id="gtag-init" strategy="lazyOnload">
+      <Script id="gtag-init" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
