@@ -1,13 +1,30 @@
 "use client";
 
 import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 const INTERACTIVE = "a, button, label, input, textarea, select, [role='button']";
+const FINE_POINTER = "(pointer: fine)";
+
+const subscribeFinePointer = (onChange: () => void) => {
+  const query = window.matchMedia(FINE_POINTER);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+};
+
+const finePointerOnClient = () => window.matchMedia(FINE_POINTER).matches;
+const finePointerOnServer = () => false;
 
 export function Cursor() {
   const reduced = useReducedMotion();
-  const [enabled, setEnabled] = useState(false);
+  const finePointer = useSyncExternalStore(
+    subscribeFinePointer,
+    finePointerOnClient,
+    finePointerOnServer,
+  );
+
+  const enabled = finePointer && !reduced;
+
   const [active, setActive] = useState(false);
   const [visible, setVisible] = useState(false);
 
@@ -18,10 +35,8 @@ export function Cursor() {
   const ringY = useSpring(y, { stiffness: 320, damping: 34, mass: 0.5 });
 
   useEffect(() => {
-    if (reduced) return;
-    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (!enabled) return;
 
-    setEnabled(true);
     document.documentElement.classList.add("has-cursor");
 
     const onMove = (event: PointerEvent) => {
@@ -41,7 +56,7 @@ export function Cursor() {
       window.removeEventListener("pointermove", onMove);
       document.removeEventListener("pointerleave", onLeave);
     };
-  }, [reduced, x, y]);
+  }, [enabled, x, y]);
 
   if (!enabled) return null;
 
