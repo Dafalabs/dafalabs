@@ -34,6 +34,8 @@ services:
     environment:
       SITE_URL: "${SITE_URL:-https://dafalabs.com}"
       API_INTERNAL_URL: "http://dafalabs-api:80"
+      GA_MEASUREMENT_ID: "${GA_MEASUREMENT_ID:-}"
+      CONSENT_SCRIPT_URL: "${CONSENT_SCRIPT_URL:-}"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.dafalabs-web.rule=Host(`dafalabs.com`) || Host(`www.dafalabs.com`)"
