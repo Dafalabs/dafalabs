@@ -116,6 +116,19 @@ html.lenis body {
   .has-cursor [role="button"] {
     cursor: none;
   }
+
+  .has-cursor [class*="ch2"],
+  .has-cursor [class*="ch2"] * {
+    cursor: auto;
+  }
+
+  .has-cursor [class*="ch2"] a,
+  .has-cursor [class*="ch2"] button,
+  .has-cursor [class*="ch2"] label,
+  .has-cursor [class*="ch2"] input,
+  .has-cursor [class*="ch2"] [role="button"] {
+    cursor: pointer;
+  }
 }
 
 @utility grid-field {

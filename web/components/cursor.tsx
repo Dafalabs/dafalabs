@@ -61,22 +61,22 @@ export function Cursor() {
   if (!enabled) return null;
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-200" aria-hidden>
+    <div className="pointer-events-none fixed inset-0 z-200 mix-blend-difference" aria-hidden>
       <motion.span
-        className="absolute h-1.5 w-1.5 rounded-full bg-brass"
+        className="absolute h-1.5 w-1.5 rounded-full bg-bone"
         style={{ x, y, translateX: "-50%", translateY: "-50%" }}
         animate={{ opacity: visible && !active ? 1 : 0 }}
         transition={{ duration: 0.15 }}
       />
 
       <motion.span
-        className="absolute rounded-full border border-brass"
+        className="absolute rounded-full border border-bone"
         style={{ x: ringX, y: ringY, translateX: "-50%", translateY: "-50%" }}
         animate={{
           width: active ? 52 : 26,
           height: active ? 52 : 26,
           opacity: visible ? (active ? 1 : 0.55) : 0,
-          backgroundColor: active ? "rgba(224,163,60,0.12)" : "rgba(224,163,60,0)",
+          backgroundColor: active ? "rgba(244,245,246,0.22)" : "rgba(244,245,246,0)",
         }}
         transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
       />
