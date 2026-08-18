@@ -108,6 +108,23 @@ html.lenis body {
   margin-bottom: -0.14em;
 }
 
+@media (pointer: fine) {
+  .has-cursor,
+  .has-cursor a,
+  .has-cursor button,
+  .has-cursor label,
+  .has-cursor [role="button"] {
+    cursor: none;
+  }
+}
+
+@utility grid-field {
+  background-image:
+    linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+  background-size: 76px 76px;
+}
+
 @utility outline-type {
   color: transparent;
   -webkit-text-stroke: 0.055rem var(--color-bone);

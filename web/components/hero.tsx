@@ -140,6 +140,12 @@ function HeroSection({
   const glowLeft = useTransform(glowX, (value) => `${value * 100}%`);
   const glowTop = useTransform(glowY, (value) => `${value * 100}%`);
 
+  const spotlight = useTransform(
+    [glowX, glowY],
+    ([px, py]: number[]) =>
+      `radial-gradient(circle 260px at ${px * 100}% ${py * 100}%, black 0%, rgba(0,0,0,0.35) 45%, transparent 75%)`,
+  );
+
   useEffect(() => {
     if (reduced) return;
     if (window.matchMedia("(pointer: coarse)").matches) return;
@@ -160,17 +166,31 @@ function HeroSection({
       ref={ref}
       className="relative flex min-h-svh flex-col justify-end overflow-hidden pb-16 pt-32"
     >
+      <div className="grid-field pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+
       {!reduced && (
-        <motion.div
-          aria-hidden
-          className="pointer-events-none absolute h-[70vmax] w-[70vmax] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70"
-          style={{
-            left: glowLeft,
-            top: glowTop,
-            background:
-              "radial-gradient(circle, rgba(224,163,60,0.13) 0%, rgba(224,163,60,0.04) 35%, transparent 68%)",
-          }}
-        />
+        <>
+          <motion.div
+            aria-hidden
+            className="grid-field pointer-events-none absolute inset-0"
+            style={{
+              maskImage: spotlight,
+              WebkitMaskImage: spotlight,
+              filter: "brightness(4) sepia(1) saturate(6) hue-rotate(-12deg)",
+            }}
+          />
+
+          <motion.div
+            aria-hidden
+            className="pointer-events-none absolute h-[46vmax] w-[46vmax] -translate-x-1/2 -translate-y-1/2 rounded-full"
+            style={{
+              left: glowLeft,
+              top: glowTop,
+              background:
+                "radial-gradient(circle, rgba(224,163,60,0.10) 0%, rgba(224,163,60,0.03) 40%, transparent 70%)",
+            }}
+          />
+        </>
       )}
 
       <motion.div className="container-page relative" style={{ y: lift, opacity: fade }}>

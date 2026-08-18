@@ -1,0 +1,70 @@
+"use client";
+
+import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
+import { useEffect, useState } from "react";
+
+const INTERACTIVE = "a, button, label, input, textarea, select, [role='button']";
+
+export function Cursor() {
+  const reduced = useReducedMotion();
+  const [enabled, setEnabled] = useState(false);
+  const [active, setActive] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  const x = useMotionValue(-100);
+  const y = useMotionValue(-100);
+
+  const ringX = useSpring(x, { stiffness: 320, damping: 34, mass: 0.5 });
+  const ringY = useSpring(y, { stiffness: 320, damping: 34, mass: 0.5 });
+
+  useEffect(() => {
+    if (reduced) return;
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
+    setEnabled(true);
+    document.documentElement.classList.add("has-cursor");
+
+    const onMove = (event: PointerEvent) => {
+      x.set(event.clientX);
+      y.set(event.clientY);
+      setVisible(true);
+      setActive(Boolean((event.target as Element).closest?.(INTERACTIVE)));
+    };
+
+    const onLeave = () => setVisible(false);
+
+    window.addEventListener("pointermove", onMove, { passive: true });
+    document.addEventListener("pointerleave", onLeave);
+
+    return () => {
+      document.documentElement.classList.remove("has-cursor");
+      window.removeEventListener("pointermove", onMove);
+      document.removeEventListener("pointerleave", onLeave);
+    };
+  }, [reduced, x, y]);
+
+  if (!enabled) return null;
+
+  return (
+    <div className="pointer-events-none fixed inset-0 z-200" aria-hidden>
+      <motion.span
+        className="absolute h-1.5 w-1.5 rounded-full bg-brass"
+        style={{ x, y, translateX: "-50%", translateY: "-50%" }}
+        animate={{ opacity: visible && !active ? 1 : 0 }}
+        transition={{ duration: 0.15 }}
+      />
+
+      <motion.span
+        className="absolute rounded-full border border-brass"
+        style={{ x: ringX, y: ringY, translateX: "-50%", translateY: "-50%" }}
+        animate={{
+          width: active ? 52 : 26,
+          height: active ? 52 : 26,
+          opacity: visible ? (active ? 1 : 0.55) : 0,
+          backgroundColor: active ? "rgba(224,163,60,0.12)" : "rgba(224,163,60,0)",
+        }}
+        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+      />
+    </div>
+  );
+}

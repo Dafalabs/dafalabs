@@ -5,6 +5,7 @@ import { Archivo, Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 
 import { SiteFooter } from "@/components/site-footer";
+import { Cursor } from "@/components/cursor";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { routing, type Locale } from "@/i18n/routing";
@@ -85,6 +86,8 @@ export default async function LocaleLayout({
           >
             {t("skip")}
           </a>
+
+          <Cursor />
 
           <SmoothScroll>
             <SiteHeader hasProjects={hasProjects} hasPosts={hasPosts} />
