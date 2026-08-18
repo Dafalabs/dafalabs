@@ -32,53 +32,30 @@ export function RotatingHeadline({
   const current = rotating[index];
 
   return (
-    <div className="flex flex-col">
-      <h1 className="display-xl">
-        <span className="outline-type block">
-          <Chars text={fixed} delay={base} reduced={reduced} />
-        </span>
+    <h1 className="display-xl">
+      <span className="outline-type block">
+        <Chars text={fixed} delay={base} reduced={reduced} />
+      </span>
 
-        <span className="mask-line block pl-[8vw] text-brass md:pl-[14vw]">
-          {reduced ? (
-            <span className="block">{rotating[0]}</span>
-          ) : (
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.span
-                key={current}
-                className="block will-change-[clip-path]"
-                initial={{ clipPath: "inset(0 100% 0 0)" }}
-                animate={{ clipPath: "inset(0 0% 0 0)" }}
-                exit={{ clipPath: "inset(0 0 0 100%)" }}
-                transition={{ duration: 0.55, ease: WIPE }}
-              >
-                {current}
-              </motion.span>
-            </AnimatePresence>
-          )}
-        </span>
-      </h1>
-
-      {!reduced && rotating.length > 1 && (
-        <div className="mt-8 flex items-center gap-5 pl-[8vw] md:pl-[14vw]">
-          <span className="font-mono text-xs tabular-nums text-ash">
-            {String(index + 1).padStart(2, "0")}
-            <span className="text-line-strong"> / </span>
-            {String(rotating.length).padStart(2, "0")}
-          </span>
-
-          <span className="h-px w-28 overflow-hidden bg-line-strong sm:w-40">
+      <span className="mask-line block pl-[8vw] text-brass md:pl-[14vw]">
+        {reduced ? (
+          <span className="block">{rotating[0]}</span>
+        ) : (
+          <AnimatePresence mode="wait" initial={false}>
             <motion.span
-              key={index}
-              className="block h-px w-full bg-brass"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: HOLD / 1000, ease: "linear" }}
-              style={{ transformOrigin: "left" }}
-            />
-          </span>
-        </div>
-      )}
-    </div>
+              key={current}
+              className="block will-change-[clip-path]"
+              initial={{ clipPath: "inset(0 100% 0 0)" }}
+              animate={{ clipPath: "inset(0 0% 0 0)" }}
+              exit={{ clipPath: "inset(0 0 0 100%)" }}
+              transition={{ duration: 0.55, ease: WIPE }}
+            >
+              {current}
+            </motion.span>
+          </AnimatePresence>
+        )}
+      </span>
+    </h1>
   );
 }
 

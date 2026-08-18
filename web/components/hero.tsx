@@ -1,5 +1,6 @@
 "use client";
 
+import type { MotionValue } from "motion/react";
 import {
   AnimatePresence,
   motion,
@@ -129,6 +130,7 @@ function HeroSection({
   });
 
   const lift = useTransform(scrollYProgress, [0, 1], [0, -140]);
+  const gridShift = useTransform(scrollYProgress, [0, 1], [0, 90]);
   const liftSlow = useTransform(scrollYProgress, [0, 1], [0, -70]);
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
@@ -166,19 +168,23 @@ function HeroSection({
       ref={ref}
       className="relative flex min-h-svh flex-col justify-end overflow-hidden pb-16 pt-32"
     >
-      <div className="grid-field pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-40" aria-hidden>
+        <DriftingGrid reduced={reduced} shift={gridShift} />
+      </div>
 
       {!reduced && (
         <>
           <motion.div
             aria-hidden
-            className="grid-field pointer-events-none absolute inset-0"
-            style={{
-              maskImage: spotlight,
-              WebkitMaskImage: spotlight,
-              filter: "brightness(4) sepia(1) saturate(6) hue-rotate(-12deg)",
-            }}
-          />
+            className="pointer-events-none absolute inset-0 overflow-hidden"
+            style={{ maskImage: spotlight, WebkitMaskImage: spotlight }}
+          >
+            <DriftingGrid
+              reduced={reduced}
+              shift={gridShift}
+              className="brightness-[4] sepia saturate-[6] hue-rotate-[-12deg]"
+            />
+          </motion.div>
 
           <motion.div
             aria-hidden
@@ -252,6 +258,28 @@ function HeroSection({
     </section>
   );
 }
+
+function DriftingGrid({
+  reduced,
+  shift,
+  className = "",
+}: {
+  reduced: boolean | null;
+  shift: MotionValue<number>;
+  className?: string;
+}) {
+  if (reduced) {
+    return <span className={`grid-field absolute -inset-24 block ${className}`} />;
+  }
+
+  return (
+    <motion.span
+      className={`grid-field absolute -inset-24 block will-change-transform ${className}`}
+      style={{ y: shift }}
+    />
+  );
+}
+
 
 function Line({
   text,
