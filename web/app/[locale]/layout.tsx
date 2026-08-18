@@ -30,6 +30,7 @@ const jetbrains = JetBrains_Mono({
   subsets: ["latin", "latin-ext"],
   variable: "--font-jetbrains",
   display: "swap",
+  preload: false,
 });
 
 export const revalidate = 30;
