@@ -23,9 +23,9 @@ export async function ServiceList({
               {String(index + 1).padStart(2, "0")}
             </span>
 
-            <h3 className="font-display text-2xl tracking-tight md:text-3xl">
+            <h2 className="font-display text-2xl tracking-tight md:text-3xl">
               {t(`${key}.name`)}
-            </h3>
+            </h2>
 
             <p className="max-w-[52ch] text-ash">
               {t(`${key}.${variant}`)}

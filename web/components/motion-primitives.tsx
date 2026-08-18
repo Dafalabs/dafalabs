@@ -52,14 +52,16 @@ export function Reveal({
   className = "",
   delay = 0,
   y = 28,
+  as = "div",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
   y?: number;
+  as?: "div" | "li";
 }) {
   const reduced = useReducedMotion();
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement & HTMLLIElement>(null);
   const inView = useInView(ref, { once: true, margin: "-12% 0px" });
   const [forced, setForced] = useState(false);
 
@@ -68,10 +70,15 @@ export function Reveal({
     return () => window.clearTimeout(timer);
   }, []);
 
-  if (reduced) return <div className={className}>{children}</div>;
+  const Tag = motion[as];
+
+  if (reduced) {
+    const Plain = as;
+    return <Plain className={className}>{children}</Plain>;
+  }
 
   return (
-    <motion.div
+    <Tag
       ref={ref}
       className={className}
       initial={{ opacity: 0, y }}
@@ -79,7 +86,7 @@ export function Reveal({
       transition={{ duration: 0.9, ease: EASE, delay }}
     >
       {children}
-    </motion.div>
+    </Tag>
   );
 }
 

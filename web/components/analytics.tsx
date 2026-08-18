@@ -5,7 +5,15 @@ export function ConsentScript() {
 
   if (!src) return null;
 
-  return <Script src={src} strategy="beforeInteractive" />;
+  const origin = new URL(src).origin;
+
+  return (
+    <>
+      <link rel="preconnect" href={origin} />
+      <link rel="preconnect" href="https://api-prod.secureprivacy.ai" />
+      <Script src={src} strategy="beforeInteractive" />
+    </>
+  );
 }
 
 export function Analytics() {

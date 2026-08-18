@@ -71,7 +71,8 @@ function Chars({
   if (reduced) return <span className="block">{text}</span>;
 
   return (
-    <span className="block" aria-label={text}>
+    <span className="block">
+      <span className="sr-only">{text}</span>
       {Array.from(text).map((char, index) => (
         <span key={`${char}-${index}`} className="mask-line inline-block" aria-hidden>
           <motion.span
